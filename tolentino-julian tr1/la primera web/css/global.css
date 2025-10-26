@@ -1,0 +1,302 @@
+/* ========================================================== */
+/* Estilos Generales y Reseteo */
+/* ========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Contenedor central (para todo el contenido) */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================================== */
+/* Sección de Encabezado (header-section) - Diseño de Boceto */
+/* ========================================================== */
+
+#header-section {
+    background-color: #ffffff;
+    padding: 10px 0 0; /* Menos padding abajo, el título va después */
+}
+
+.headering {
+    /* Contenedor principal: logo (izquierda) y navegación/búsqueda (derecha) */
+    display: flex;
+    justify-content: space-between; /* Espacio entre el logo y el resto */
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+.logo-area img {
+    width: 150px; /* Tamaño del logo ajustado */
+    height: auto;
+}
+
+/* Área que contiene Navegación, Botón de Registro y Búsqueda */
+.nav-busqueda {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio general entre los bloques */
+}
+
+/* Estilos para la Navegación (Enlaces) */
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+/* Botón de Registro */
+.btn-registro {
+    background-color: #333; /* Color oscuro como el boceto */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Formulario de Búsqueda */
+.search-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-form .input-buscar {
+    padding: 8px;
+    border: none;
+    outline: none;
+    width: 150px;
+}
+
+.search-form .btn-buscar {
+    padding: 8px 10px;
+    background-color: transparent; /* Quitar fondo */
+    color: #333;
+    border: none;
+    cursor: pointer;
+    /* Usaremos un ícono de búsqueda si fuera necesario, pero por ahora solo el texto */
+    font-size: 0; /* Oculta el texto 'Buscar' */
+    position: relative;
+    width: 35px;
+}
+
+.search-form .btn-buscar::after {
+    content: "🔎"; /* Ícono de lupa (se necesita el font-family adecuado) */
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+}
+
+/* Título Hospital (debajo del headering) */
+.titulo-hospital {
+    color: #007bff;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.separador-header {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px auto 20px;
+    max-width: 1200px;
+}
+
+/* ========================================================== */
+/* Sección de Productos Destacados (imagenes-section) */
+/* ========================================================== */
+
+#imagenes-section {
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#imagenes-section h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.productos-contenedor {
+    /* Contenedor flex para alinear las tarjetas de productos */
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.producto-card {
+    /* Estilo para cada tarjeta de producto */
+    text-align: center;
+    flex-basis: 30%; /* Para que quepan 3 por fila */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.producto-card figure img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain; /* Cambiado a contain para no cortar las imágenes de productos */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.producto-card p {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.producto-card button {
+    background-color: white; /* Fondo blanco */
+    color: #333;
+    padding: 10px 15px;
+    border: 1px solid #333; /* Borde oscuro como el boceto */
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.producto-card button:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* ========================================================== */
+/* Sección de Categorías (categorias) - Diseño de Boceto */
+/* ========================================================== */
+
+#categorias {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.categorias-grid-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.categorias-botones {
+    /* Área de botones (izquierda) */
+    display: flex;
+    flex-direction: column; /* Apilar botones */
+    gap: 10px;
+    flex-basis: 35%;
+}
+
+.categorias-botones button {
+    background-color: white; 
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #333; /* Borde oscuro como el boceto */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.categorias-botones button:hover {
+    background-color: #333;
+    color: white;
+}
+
+.categorias-promocion {
+    /* Área de promoción (derecha) */
+    flex-basis: 65%;
+    background-color: #ccc; /* Fondo gris para simular el espacio */
+    border-radius: 8px;
+    height: 300px; /* Alto fijo para el espacio de la imagen/widget */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.categorias-promocion img {
+    /* Si la imagen existe, que ocupe todo el espacio o se centre */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ========================================================== */
+/* Pie de Página (footer-section) - Estilo oscuro de boceto */
+/* ========================================================== */
+
+#before-footer {
+    /* Reutilizaremos este como el pie superior gris oscuro */
+    background-color: #333; /* Fondo oscuro */
+    color: white;
+    padding: 20px 0;
+    margin: 0;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: center;
+}
+
+#before-footer h2 {
+    display: none; /* Ocultar el título de esta sección si no es necesario */
+}
+
+#before-footer div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#before-footer a img {
+    /* Estilo de los íconos de pie superior */
+    width: 40px;
+    height: 40px;
+    filter: invert(100%); /* Hace los íconos blancos/claros */
+}
+
+#footer-section {
+    background-color: #222; /* Fondo aún más oscuro para la base del footer */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* ... (el resto del CSS de footer-section y contacto-section se mantiene similar) */
